@@ -16,9 +16,9 @@ class _HomePageState2 extends State<Home1> {
       children: <Widget>[
         Column(
             children: this.list.map((value) {
-          return ListTile(
-            title: Text(value),
-          );
+              return ListTile(
+                  title: Text(value),
+            );
         }).toList()),
         SizedBox(height: 20),
         RaisedButton(
@@ -47,6 +47,13 @@ class _HomePageState2 extends State<Home1> {
             );
           },
           child: Text("带参跳转->search页面"),
+        ),
+        RaisedButton(
+          onPressed: () {
+            // 带参数路由跳转
+            Navigator.of(context).pushNamed("/banner_page");
+          },
+              child: Text("轮播图"),
         )
       ],
     );
