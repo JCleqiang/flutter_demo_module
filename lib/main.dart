@@ -11,6 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
        initialRoute: "/button", // 初始化的时候加载的路由
       onGenerateRoute: onGenerateRoute,
+
     );
   }
 }

@@ -4,6 +4,12 @@
     <exclude-output />
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/.ios/Flutter/.symlinks/flutter_plugs_02/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/.ios/Flutter/.symlinks/flutter_plugs_02/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/.ios/Flutter/.symlinks/flutter_plugs_02/build" />
+      <excludeFolder url="file://$MODULE_DIR$/.ios/Flutter/.symlinks/flutter_plugs_02/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/.ios/Flutter/.symlinks/flutter_plugs_02/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/.ios/Flutter/.symlinks/flutter_plugs_02/example/build" />
       <excludeFolder url="file://$MODULE_DIR$/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/build" />
     </content>
