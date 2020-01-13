@@ -29,26 +29,45 @@ class HomePage extends State<Home> {
         ),
         body: ListView(
           children: exampleList.map((value) {
-            return Card(
-              margin: EdgeInsets.fromLTRB(15, 5, 15, 5),
-              child: ListTile(
-                title: Text(
-                  value["title"],
-                  style: TextStyle(
-                    fontSize: 18,
-                    color: Color.fromARGB(255, 51, 51, 51),
-                  ),
-                ),
-                subtitle: Text(
-                  value["des"],
-                  style: TextStyle(
-                    fontSize: 12,
-                    color: Color.fromARGB(255, 102, 102, 102),
-                  ),
-                ),
-              ),
+            return InkWell(
+              onTap: () {
+                Navigator.of(context).pushNamed(value["route"]);
+              },
+              child: CardLayout(value),
             );
           }).toList(),
         ));
   }
 }
+
+class CardLayout extends StatelessWidget {
+  Map obj = null;
+
+  CardLayout(Map obj) {
+    this.obj = obj;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return  Card(
+      margin: EdgeInsets.fromLTRB(15, 5, 15, 5),
+      child: ListTile(
+        title: Text(
+          "file: " + obj["title"] + "，route: " + obj["route"],
+          style: TextStyle(
+            fontSize: 18,
+            color: Color.fromARGB(255, 51, 51, 51),
+          ),
+        ),
+        subtitle: Text(
+          obj["des"],
+          style: TextStyle(
+            fontSize: 12,
+            color: Color.fromARGB(255, 102, 102, 102),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
