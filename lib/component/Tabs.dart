@@ -35,7 +35,9 @@ class _TabsState extends State<Tabs> {
 //            }
 //        ),
 //      ),
-      appBar: null,
+      appBar: AppBar(
+        title: Text("adasda"),
+      ),
       body: _pageList[this._currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: this._currentIndex,

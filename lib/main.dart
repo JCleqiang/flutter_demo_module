@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo_module/routes/routes.dart';
-import 'component/Tabs.dart';
 
 void main() => runApp(MyApp());
 
