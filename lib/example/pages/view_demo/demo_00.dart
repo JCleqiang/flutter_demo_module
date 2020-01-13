@@ -9,8 +9,6 @@ class Demo_00 extends StatelessWidget {
   Widget build(BuildContext context) {
     // 我们想使用 material 风格的应用，所以这里用 MaterialApp
     return MaterialApp(
-      // 移动设备使用这个 title 来表示我们的应用
-      title: "首页",
       // 应用的“主页”
       home: Scaffold(
         appBar: AppBar(
