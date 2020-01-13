@@ -11,9 +11,9 @@ class MainTabs extends StatefulWidget {
 class MainTabsPage extends State<MainTabs> {
   int _currentIndex = 0;
   List _pages = [
-    Home(Colors.green, "首页"),
-    Home(Colors.deepOrangeAccent, "消息"),
-    Home(Colors.purpleAccent, "我的"),
+    Home("首页"),
+    Home("消息"),
+    Home("我的"),
   ];
 
   void _updateIndex(int index) {

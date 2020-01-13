@@ -1,41 +1,54 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo_module/example/ref/example_list.dart';
 
 class Home extends StatefulWidget {
-  Color _bgColor;
   String _title;
 
-  Home(Color bgColor, String title) {
-    _bgColor = bgColor;
+  Home(String title) {
     _title = title;
   }
 
   @override
   State<StatefulWidget> createState() {
-    return HomePage(_bgColor, _title);
+    return HomePage(_title);
   }
-
 }
 
-
 class HomePage extends State<Home> {
-  Color _bgColor;
   String _title;
 
-  HomePage(Color bgColor, String title) {
-    _bgColor = bgColor;
+  HomePage(String title) {
     _title = title;
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(_title),
-      ),
-      body: Container(
-        color: _bgColor,
-      ),
-    );
+        appBar: AppBar(
+          title: Text(_title),
+        ),
+        body: ListView(
+          children: exampleList.map((value) {
+            return Card(
+              margin: EdgeInsets.fromLTRB(15, 5, 15, 5),
+              child: ListTile(
+                title: Text(
+                  value["title"],
+                  style: TextStyle(
+                    fontSize: 18,
+                    color: Color.fromARGB(255, 51, 51, 51),
+                  ),
+                ),
+                subtitle: Text(
+                  value["des"],
+                  style: TextStyle(
+                    fontSize: 12,
+                    color: Color.fromARGB(255, 102, 102, 102),
+                  ),
+                ),
+              ),
+            );
+          }).toList(),
+        ));
   }
-
 }

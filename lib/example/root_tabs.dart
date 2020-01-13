@@ -36,13 +36,13 @@ class _RootTabsState extends State<RootTabs> with SingleTickerProviderStateMixin
   }
 
   // tab上的页面组件数组
-  List<Widget> _getPageData() {
-    var tempList = _pageInfoList.map((value) {
-      return value.page;
-    });
-
-    return tempList.toList();
-  }
+//  List<Widget> _getPageData() {
+//    var tempList = _pageInfoList.map((value) {
+//      return value.page;
+//    });
+//
+//    return tempList.toList();
+//  }
 
   // 标签item组件数组
   List<BottomNavigationBarItem> _getTabData() {
@@ -59,7 +59,9 @@ class _RootTabsState extends State<RootTabs> with SingleTickerProviderStateMixin
     return Scaffold(
       body: TabBarView(
         controller: controller,
-        children: _getPageData(),
+        children: _pageInfoList.map((value){
+          return value.page;
+        }).toList(),
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: controller.index,
@@ -86,19 +88,19 @@ class PageInfo {
       'tabTitle': '首页',
       'tabIcon': new Icon(Icons.home),
       'navTitle': '首页',
-      'page': Home(Colors.green, "首页")
+      'page': Home("首页")
     },
     {
       'tabTitle': '消息',
       'tabIcon': new Icon(Icons.message),
       'navTitle': '消息',
-      'page': Home(Colors.green, "消息")
+      'page': Home("消息")
     },
     {
       'tabTitle': '我的',
       'tabIcon': new Icon(Icons.person),
       'navTitle': '我的',
-      'page': Home(Colors.green, "我的")
+      'page': Home("我的")
     },
   ];
 
