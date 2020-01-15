@@ -21,7 +21,6 @@ class Demo_01 extends StatelessWidget{
 class TextContent extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Center(
       child: Container(
         child: Text(

@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo_module/example/pages/view_demo/demo_00.dart';
 import 'package:flutter_demo_module/example/pages/view_demo/demo_01.dart';
+import 'package:flutter_demo_module/example/pages/view_demo/demo_02.dart';
 import 'package:flutter_demo_module/example/root_tabs.dart';
 
 final routes = {
   "/": (context) => RootTabs(),
   "/demo_00": (context) => Demo_00(),
   "/demo_01": (context) => Demo_01(),
+  "/demo_02": (context) => Demo_02(),
 };
 
 //固定写法
