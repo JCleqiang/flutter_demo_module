@@ -53,7 +53,7 @@ class CardLayout extends StatelessWidget {
       margin: EdgeInsets.fromLTRB(15, 5, 15, 5),
       child: ListTile(
         title: Text(
-          "文件: " + obj["title"] + "，路由: " + obj["route"],
+          obj["title"],
           style: TextStyle(
             fontSize: 16,
             color: Color.fromARGB(255, 51, 51, 51),

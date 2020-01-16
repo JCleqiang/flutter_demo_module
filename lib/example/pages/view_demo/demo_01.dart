@@ -89,5 +89,4 @@ class ImageContent extends StatelessWidget{
 //      ),
     );
   }
-
 }

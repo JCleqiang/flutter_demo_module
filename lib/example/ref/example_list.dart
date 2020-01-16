@@ -1,6 +1,8 @@
 List exampleList = [
-  {"title": 'demo_00.dart', "route": "/demo_00", "des": 'app页面结构示例'},
-  {"title": 'demo_01.dart',  "route": "/demo_01", "des": 'Text、Image示例'},
-  {"title": 'demo_02.dart',  "route": "/demo_02", "des": 'ListView示例'},
-  {"title": 'demo_03.dart',  "route": "/demo_03", "des": 'GridView、Row、Expanded示例'},
+  {"route": "/demo_00", "title": 'app页面结构示例', "des": '文件名：demo_00.dart，路由：/demo_00'},
+  {"route": "/demo_01", "title": 'Text、Image示例',  "des": '文件名：demo_01.dart，路由：/demo_01'},
+  {"route": "/demo_02", "title": 'ListView示例', "des": '文件名：demo_02.dart，路由：/demo_02'},
+  {"route": "/demo_03", "title": 'GridView、Row、Expanded示例', "des": '文件名：demo_03.dart，路由：/demo_03'},
+  {"route": "/demo_04", "title": 'Stack、Stack、Positioned、Wrap示例',  "des": '文件名：demo_04.dart，路由：/demo_04\n这里面都是一些和布局定位相关的控件'},
+  {"route": "/demo_05", "title": 'appbar示例', "des": '文件名：demo_05.dart，路由：/demo_05'},
 ];

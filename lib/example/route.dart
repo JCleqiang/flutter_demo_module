@@ -3,6 +3,8 @@ import 'package:flutter_demo_module/example/pages/view_demo/demo_00.dart';
 import 'package:flutter_demo_module/example/pages/view_demo/demo_01.dart';
 import 'package:flutter_demo_module/example/pages/view_demo/demo_02.dart';
 import 'package:flutter_demo_module/example/pages/view_demo/demo_03.dart';
+import 'package:flutter_demo_module/example/pages/view_demo/demo_04.dart';
+import 'package:flutter_demo_module/example/pages/view_demo/demo_05.dart';
 import 'package:flutter_demo_module/example/root_tabs.dart';
 
 final routes = {
@@ -11,6 +13,8 @@ final routes = {
   "/demo_01": (context) => Demo_01(),
   "/demo_02": (context) => Demo_02(),
   "/demo_03": (context) => Demo_03(),
+  "/demo_04": (context) => Demo_04(),
+  "/demo_05": (context) => Demo_05(),
 };
 
 //固定写法
