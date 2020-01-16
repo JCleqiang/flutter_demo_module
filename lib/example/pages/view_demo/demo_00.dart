@@ -1,21 +1,14 @@
 import 'package:flutter/material.dart';
 
-
-void main() {
-  runApp(MyApp());
-}
-
 /// 这个 widget 作用这个应用的顶层 widget.
 ///
 /// 这个 widget 是无状态的，所以我们继承的是 [StatelessWidget].
 /// 对应的，有状态的 widget 可以继承 [StatefulWidget]
-class MyApp extends StatelessWidget {
+class Demo_00 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // 我们想使用 material 风格的应用，所以这里用 MaterialApp
     return MaterialApp(
-      // 移动设备使用这个 title 来表示我们的应用
-      title: "首页",
       // 应用的“主页”
       home: Scaffold(
         appBar: AppBar(
@@ -43,7 +36,4 @@ class MyHome extends StatelessWidget {
         )
     );
   }
-
 }
-
-

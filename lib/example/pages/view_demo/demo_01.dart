@@ -1,32 +1,30 @@
 import 'package:flutter/material.dart';
 
-void main(){
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget{
+class Demo_01 extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
         home:Scaffold(
             appBar: AppBar(
-                title:Text("flutter demo"), 
+              title:Text("flutter demo"),
               backgroundColor: Color.fromARGB(255, 188, 221, 78),
             ),
-            body:HomeContent()
+            body:TextContent()
         )
     );
   }
 }
 
-class HomeContent extends StatelessWidget{
+/*
+ * Text控件
+ */
+class TextContent extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Center(
       child: Container(
         child: Text(
-            '各位同学大家好我是主讲老师，各位同学大家好我是主讲老师大地',
+            '各位同学大家好',
             textAlign:TextAlign.center,
             overflow:TextOverflow.ellipsis ,
             maxLines: 10,
@@ -58,22 +56,40 @@ class HomeContent extends StatelessWidget{
             )
         ),
         // padding:EdgeInsets.all(20),
-
         // padding:EdgeInsets.fromLTRB(10, 30, 5, 0)
-
         margin: EdgeInsets.fromLTRB(10, 30, 5, 0),
 
         // transform:Matrix4.translationValues(100,0,0)
-
         // transform:Matrix4.rotationZ(0.3)
-
         // transform:Matrix4.diagonal3Values(1.2, 1, 1)
-
         alignment: Alignment.bottomLeft,
-
-
-
       ),
+    );
+  }
+}
+
+/*
+ * Image控件
+ */
+class ImageContent extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Container(
+      width: 200,
+      height: 400,
+      decoration: BoxDecoration(
+        color: Colors.yellow,
+        borderRadius: BorderRadius.circular(100),
+      ),
+      child: Image.asset(
+        "images/01.png",
+        fit: BoxFit.cover,
+      ),
+//      child: Image.network(
+//        "http://dmimg.5054399.com/allimg/pkm/pk/22.jpg",
+//        fit: BoxFit.cover,
+//      ),
     );
   }
 

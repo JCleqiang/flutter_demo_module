@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_demo_module/component/Alert.dart';
-import 'package:flutter_demo_module/main_12_02/Home1.dart';
+import 'package:flutter_demo_module/main_12_01/Home1.dart';
 import 'package:flutter_demo_module/main_12_02/Home2.dart';
 import 'package:flutter_demo_module/main_12_02/Home3.dart';
-import 'package:flutter_plugs_02/flutter_plugs_02.dart';
 
 class Tabs extends StatefulWidget {
   Tabs({Key key}) : super(key: key);
@@ -18,24 +16,27 @@ class _TabsState extends State<Tabs> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+//      appBar: AppBar(
+//        title: Text("Flutter Demo"),
+//        leading: IconButton(
+//            icon: Icon(Icons.close, color: Colors.white),
+//            onPressed: () {
+//              Future<int> future = FlutterPlugs02.dismissFlutterVC;
+//
+//              future.then((value){
+//                if (value != 1) {
+//                  Alert.showAlert(context, "关闭flutter失败，错误code：" + value.toString());
+//                }
+//              },onError: (e) {
+//                Alert.showAlert(context, "关闭flutter异常1，错误code：" + "待开发");
+//              }).catchError((e){
+//                Alert.showAlert(context, "关闭flutter异常2，错误code：" + "待开发");
+//              });
+//            }
+//        ),
+//      ),
       appBar: AppBar(
-        title: Text("Flutter Demo"),
-        leading: IconButton(
-            icon: Icon(Icons.close, color: Colors.white),
-            onPressed: () {
-              Future<int> future = FlutterPlugs02.dismissFlutterVC;
-
-              future.then((value){
-                if (value != 1) {
-                  Alert.showAlert(context, "关闭flutter失败，错误code：" + value.toString());
-                }
-              },onError: (e) {
-                Alert.showAlert(context, "关闭flutter异常1，错误code：" + "待开发");
-              }).catchError((e){
-                Alert.showAlert(context, "关闭flutter异常2，错误code：" + "待开发");
-              });
-            }
-        ),
+        title: Text("adasda"),
       ),
       body: _pageList[this._currentIndex],
       bottomNavigationBar: BottomNavigationBar(
