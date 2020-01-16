@@ -6,7 +6,7 @@ class Demo_02 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(title: Text("ListView demo")),
-        body: HomeContent2());
+        body: HomeContent());
   }
 }
 
@@ -24,13 +24,13 @@ class HomeContent extends StatelessWidget {
     );
   }
 
-
   List<Widget> listWidget = [
     Container(
+      color: Colors.orange,
       padding: EdgeInsets.fromLTRB(0, 40, 0, 0),
       height: 100,
       child: Text(
-        "你好",
+        "文本在Container居中",
         textAlign: TextAlign.center,
         style: TextStyle(color: Colors.black, fontSize: 22),
       ),
@@ -60,6 +60,19 @@ class HomeContent extends StatelessWidget {
       height: 60,
       padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
     ),
+    Container(
+      color: Colors.orange,
+      child: Padding(
+          padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+          child: Column(
+            children: <Widget>[
+              Text("Padding控件的使用", ),
+              Image.network('https://www.itying.com/images/flutter/1.png',
+                  fit: BoxFit.cover)
+            ],
+          )
+      ),
+    )
   ];
 }
 

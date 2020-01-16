@@ -8,15 +8,11 @@ class Demo_00 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // 我们想使用 material 风格的应用，所以这里用 MaterialApp
-    return MaterialApp(
-      // 应用的“主页”
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('首页02'),
-          backgroundColor: Color.fromARGB(255, 188, 221, 78),
-        ),
-        body: MyHome(),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('首页02'),
       ),
+      body: MyHome(),
     );
   }
 }
