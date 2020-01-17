@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 
-// llq-fq
-
-class FormDemoPage extends StatefulWidget {
-  FormDemoPage({Key key}) : super(key: key);
+class Demo_08 extends StatefulWidget {
+  Demo_08({Key key}) : super(key: key);
 
   _FormDemoPageState createState() => _FormDemoPageState();
 }
 
-class _FormDemoPageState extends State<FormDemoPage> {
+class _FormDemoPageState extends State<Demo_08> {
 
   String username;
   int sex=1;
@@ -16,25 +14,19 @@ class _FormDemoPageState extends State<FormDemoPage> {
 
   List hobby=[
     {
-      "checked":true,
-      "title":"吃饭"
+      "checked":true, "title":"吃饭"
     },
     {
-      "checked":false,
-      "title":"睡觉"
+      "checked":false, "title":"睡觉"
     },
     {
-      "checked":true,
-      "title":"写代码"
+      "checked":true, "title":"写代码"
     }
   ];
 
   List<Widget> _getHobby(){
-
     List<Widget> tempList=[];
-
     for(var i=0;i<this.hobby.length;i++){
-
       tempList.add(
           Row(
             children: <Widget>[
@@ -50,10 +42,8 @@ class _FormDemoPageState extends State<FormDemoPage> {
             ],
           )
       );
-
     }
     return tempList;
-
   }
 
   void _sexChanged(value){
@@ -72,7 +62,6 @@ class _FormDemoPageState extends State<FormDemoPage> {
         padding: EdgeInsets.all(20),
         child: Column(
           children: <Widget>[
-
             TextField(
               decoration: InputDecoration(
                   hintText: "输入用户信息"

@@ -5,6 +5,10 @@ import 'package:flutter_demo_module/example/pages/view_demo/demo_02.dart';
 import 'package:flutter_demo_module/example/pages/view_demo/demo_03.dart';
 import 'package:flutter_demo_module/example/pages/view_demo/demo_04.dart';
 import 'package:flutter_demo_module/example/pages/view_demo/demo_05.dart';
+import 'package:flutter_demo_module/example/pages/view_demo/demo_06.dart';
+import 'package:flutter_demo_module/example/pages/view_demo/demo_07.dart';
+import 'package:flutter_demo_module/example/pages/view_demo/demo_08.dart';
+import 'package:flutter_demo_module/example/pages/view_demo/dependnet/dep_search.dart';
 import 'package:flutter_demo_module/example/root_tabs.dart';
 
 final routes = {
@@ -15,6 +19,12 @@ final routes = {
   "/demo_03": (context) => Demo_03(),
   "/demo_04": (context) => Demo_04(),
   "/demo_05": (context) => Demo_05(),
+  "/demo_06": (context) => Demo_06(),
+  "/demo_07": (context) => Demo_07(),
+  "/demo_08": (context) => Demo_08(),
+
+  "/dep_serach": (context) => Search(),
+
 };
 
 //固定写法

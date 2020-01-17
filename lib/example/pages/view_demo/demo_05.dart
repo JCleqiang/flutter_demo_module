@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class Demo_05 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-      return AppBardemoPage2();
+      return AppBardemoPage3();
   }
 }
 
@@ -40,7 +40,7 @@ class AppBardemoPage extends StatelessWidget {
   }
 }
 
-// DefaultTabController、TabBarView的用法
+// DefaultTabController、TabBarView的混合使用
 class AppBardemoPage2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -95,7 +95,7 @@ class AppBardemoPage3 extends StatelessWidget {
           appBar: AppBar(
             backgroundColor: Colors.red,
             leading: IconButton(
-                icon: Icon(Icons.arrow_back),
+                icon: Icon(Icons.arrow_back_ios),
                 tooltip: "Search",
                 onPressed: () {
                   Navigator.of(context).pop();
