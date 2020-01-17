@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
 
-class MyApp extends StatelessWidget {
+class Demo_05 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: Scaffold(body: AppBardemoPage3()));
+      return AppBardemoPage3();
   }
 }
 
+// AppBar里面的一些属性示例
 class AppBardemoPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -18,22 +16,20 @@ class AppBardemoPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.red,
         leading: IconButton(
-            icon: Icon(Icons.menu),
+            icon: Icon(Icons.arrow_back_ios),
             tooltip: "Search",
             onPressed: () {
-              print('menu Pressed');
+              Navigator.of(context).pop();
             }),
-        title: Text('FlutterDemo'),
+        title: Text('appbar示例'),
         actions: <Widget>[
           IconButton(
               icon: Icon(Icons.search),
-              tooltip: "Search",
               onPressed: () {
                 print('Search Pressed');
               }),
           IconButton(
               icon: Icon(Icons.more_horiz),
-              tooltip: "more_horiz",
               onPressed: () {
                 print('more_horiz Pressed');
               })
@@ -44,6 +40,7 @@ class AppBardemoPage extends StatelessWidget {
   }
 }
 
+// DefaultTabController、TabBarView的混合使用
 class AppBardemoPage2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -52,7 +49,7 @@ class AppBardemoPage2 extends StatelessWidget {
         length: 3,
         child: Scaffold(
           appBar: AppBar(
-              title: Text('FlutterDemo'),
+              title: Text('DefaultTabController'),
               bottom: TabBar(tabs: <Widget>[
                 Tab(text: "热门"),
                 Tab(text: "推荐"),
@@ -61,31 +58,30 @@ class AppBardemoPage2 extends StatelessWidget {
           body: TabBarView(
             children: <Widget>[
               ListView(
-                children: <Widget>[
-                  ListTile(title: Text("这是第一个 tab")),
-                  ListTile(title: Text("这是第一个 tab")),
-                  ListTile(title: Text("这是第一个 tab"))
-                ],
+                children: _listWidget(0)
               ),
               ListView(
-                children: <Widget>[
-                  ListTile(title: Text("这是第二个 tab")),
-                  ListTile(title: Text("这是第二个 tab")),
-                  ListTile(title: Text("这是第二个 tab"))
-                ],
+                children: _listWidget(1)
               ),
               ListView(
-                children: <Widget>[
-                  ListTile(title: Text("这是第二个 tab")),
-                  ListTile(title: Text("这是第二个 tab")),
-                  ListTile(title: Text("这是第二个 tab"))
-                ],
+                children: _listWidget(2)
               )
             ],
           ),
         ),
       ),
     );
+  }
+
+  List<Widget> _listWidget(int tabIndex) {
+    List<Widget> tmp = List();
+    for(int i = 0; i < 100; i++) {
+      Widget w = ListTile(title: Text("这是第" + tabIndex.toString() + "组第" + i.toString() + "行"));
+
+      tmp.add(w);
+    }
+
+    return tmp;
   }
 }
 
@@ -99,7 +95,7 @@ class AppBardemoPage3 extends StatelessWidget {
           appBar: AppBar(
             backgroundColor: Colors.red,
             leading: IconButton(
-                icon: Icon(Icons.arrow_back),
+                icon: Icon(Icons.arrow_back_ios),
                 tooltip: "Search",
                 onPressed: () {
                   Navigator.of(context).pop();
@@ -110,7 +106,7 @@ class AppBardemoPage3 extends StatelessWidget {
                 Expanded(
                   flex: 1,
                   child:
-                      TabBar(tabs: <Widget>[Tab(text: "热门"), Tab(text: "推荐")]),
+                  TabBar(tabs: <Widget>[Tab(text: "热门"), Tab(text: "推荐")]),
                 )
               ],
             ),
@@ -138,3 +134,4 @@ class AppBardemoPage3 extends StatelessWidget {
     );
   }
 }
+

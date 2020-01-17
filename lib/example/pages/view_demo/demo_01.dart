@@ -3,14 +3,11 @@ import 'package:flutter/material.dart';
 class Demo_01 extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        home:Scaffold(
-            appBar: AppBar(
-              title:Text("flutter demo"),
-              backgroundColor: Color.fromARGB(255, 188, 221, 78),
-            ),
-            body:TextContent()
-        )
+    return Scaffold(
+        appBar: AppBar(
+          title:Text("flutter demo"),
+        ),
+        body:TextContent()
     );
   }
 }
@@ -92,5 +89,4 @@ class ImageContent extends StatelessWidget{
 //      ),
     );
   }
-
 }

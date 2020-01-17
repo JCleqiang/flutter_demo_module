@@ -1,26 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo_module/component/Tabs.dart';
-import 'package:flutter_demo_module/main_12_02/ButtonExample.dart';
-import 'package:flutter_demo_module/main_12_02/FormDemo.dart';
-import 'package:flutter_demo_module/main_12_01/Home1.dart';
+import 'package:flutter_demo_module/main_12_02/Home1.dart';
 import 'package:flutter_demo_module/main_12_02/Home2.dart';
 import 'package:flutter_demo_module/main_12_02/Home3.dart';
-import 'package:flutter_demo_module/main_12_02/ListPraise.dart';
-import 'package:flutter_demo_module/main_12_02/Search.dart';
-import 'package:flutter_demo_module/main_12_02/TextField.dart';
-import 'package:flutter_demo_module/pages/banner/pagination.dart';
+import 'package:flutter_demo_module/example/pages/view_demo/banner/pagination.dart';
 
 final routes = {
   "/": (context) => Tabs(),
   "/home1": (context) => Home1(),
   "/home2": (context) => Home2(),
   "/home2": (context) => Home3(),
-  "/search": (context, {arguments}) => Search(orderInfo: arguments),
-  "/button": (context) => ButtonDemoPage(),
-  "/textField": (context) => TextFieldDemoPage(),
-  "/formDemo": (context) => FormDemoPage(),
-  "/list_praise": (context) => ListPraise(),
-  "/banner_page": (context) => Pagination(),
 };
 
 //固定写法

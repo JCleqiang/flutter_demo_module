@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class Search extends StatelessWidget {
+class Search_01 extends StatelessWidget {
 
-  String orderId = "1";
-  Search({this.orderId});
+  final orderInfo;
+  Search_01({this.orderInfo});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class Search extends StatelessWidget {
             Container(
               color: Colors.orange,
               child: Text(
-                "订单id = " + this.orderId,
+                "订单id = ${orderInfo != null? orderInfo["orderId"]: "空"}",
                 textDirection: TextDirection.ltr,
                 style: TextStyle(
                   fontSize: 22,
