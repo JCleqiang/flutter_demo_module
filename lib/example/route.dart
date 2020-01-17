@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo_module/example/pages/view_demo/banner/pagination.dart';
 import 'package:flutter_demo_module/example/pages/view_demo/demo_00.dart';
 import 'package:flutter_demo_module/example/pages/view_demo/demo_01.dart';
 import 'package:flutter_demo_module/example/pages/view_demo/demo_02.dart';
@@ -9,6 +10,7 @@ import 'package:flutter_demo_module/example/pages/view_demo/demo_06.dart';
 import 'package:flutter_demo_module/example/pages/view_demo/demo_07.dart';
 import 'package:flutter_demo_module/example/pages/view_demo/demo_08.dart';
 import 'package:flutter_demo_module/example/pages/view_demo/dependnet/dep_search.dart';
+import 'package:flutter_demo_module/example/pages/view_demo/dependnet/dep_search_01.dart';
 import 'package:flutter_demo_module/example/root_tabs.dart';
 
 final routes = {
@@ -24,6 +26,8 @@ final routes = {
   "/demo_08": (context) => Demo_08(),
 
   "/dep_serach": (context) => Search(),
+  "/dep_search_01": (context, {arguments}) => Search_01(orderInfo: arguments),
+  "/banner": (context) => Pagination(),
 
 };
 

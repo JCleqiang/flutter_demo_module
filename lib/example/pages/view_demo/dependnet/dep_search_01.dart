@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class Search extends StatelessWidget {
+class Search_01 extends StatelessWidget {
 
   final orderInfo;
-  Search({this.orderInfo});
+  Search_01({this.orderInfo});
 
   @override
   Widget build(BuildContext context) {

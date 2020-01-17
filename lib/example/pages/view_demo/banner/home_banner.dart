@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_demo_module/pages/banner/story.dart';
+import 'package:flutter_demo_module/example/pages/view_demo/banner/story.dart';
 
 class HomeBanner extends StatefulWidget {
   final List<StoryModel> bannerStories;
@@ -27,7 +27,6 @@ class _BannerState extends State<HomeBanner> {
           children: <Widget>[
             PageView(
               controller: controller,
-
             )
           ]
       ),

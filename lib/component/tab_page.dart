@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_demo_module/pages/home2/first_page.dart';
-import 'package:flutter_demo_module/pages/home2/layout_demo.dart';
-import 'package:flutter_demo_module/pages/home2/list_demo.dart';
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() {
@@ -48,11 +45,9 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
       ),
       body: new TabBarView(
         controller: controller,
-        children: <Widget> [
-          new FirstPage(),
-          new LayoutDemo2(),
-          new ListDemo(),
-        ]
+//        children: <Widget> [
+//          new ListDemo(),
+//        ]
       ),
       bottomNavigationBar: Material(
         color: const Color(0xFFF0EEEF), //底部导航栏主题颜色

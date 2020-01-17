@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_demo_module/pages/banner/home_banner.dart';
-import 'package:flutter_demo_module/pages/banner/story.dart';
+import 'package:flutter_demo_module/example/pages/view_demo/banner/home_banner.dart';
+import 'package:flutter_demo_module/example/pages/view_demo/banner/story.dart';
 
 class Pagination extends StatelessWidget {
   // 轮播数据
@@ -44,8 +44,11 @@ class Pagination extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return HomeBanner(_pageSelector(context), (StoryModel story){
-      print("HomeBanner tap");
-    });
+    return Scaffold(
+      appBar: AppBar(title: Text("banner"),),
+      body: HomeBanner(_pageSelector(context), (StoryModel story){
+        print("HomeBanner tap");
+      }),
+    );
   }
 }
