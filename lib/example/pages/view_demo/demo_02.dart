@@ -5,7 +5,7 @@ class Demo_02 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text("ListView demo")),
+        appBar: AppBar(title: Text("ListView示例")),
         body: HomeContent2());
   }
 }
