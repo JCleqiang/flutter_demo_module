@@ -9,4 +9,5 @@ List exampleList = [
   {"route": "/demo_07", "title": '所有Button示例', "des": '文件名：demo_07.dart，路由：/demo_07\nRaisedButton、FlatButton、OutlineButton等示例，以为alert的封装和dialog的原生使用'},
   {"route": "/demo_08", "title": '表单控件示例', "des": '文件名：demo_08.dart，路由：/demo_08'},
   {"route": "/banner", "title": 'banner', "des": '文件名：pagination.dart.dart，路由：/banner'},
+  {"route": "/demo_09", "title": '网络', "des": '文件名：demo_09.dart.dart，路由：/demo_09'},
 ];

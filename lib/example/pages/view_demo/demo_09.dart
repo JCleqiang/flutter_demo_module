@@ -2,29 +2,15 @@ import 'dart:convert';
 import 'dart:io';
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+class Demo_09 extends StatefulWidget {
+  Demo_09({Key key}) : super(key: key);
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return MaterialApp(
-        home: Scaffold(
-      appBar: AppBar(title: Text('main_07')),
-      body: HomePage(),
-    ));
-  }
-}
-
-class HomePage extends StatefulWidget {
-  @override
   State<StatefulWidget> createState() {
-    // TODO: implement createState
-    return new HomeState();
+    return HomeState();
   }
 }
 
-class HomeState extends State<HomePage> {
+class HomeState extends State<Demo_09> {
   List data;
 
   @override
@@ -34,33 +20,33 @@ class HomeState extends State<HomePage> {
   }
 
   void _httpClient() async {
-//    var responseBody;
-
     var httpClient = new HttpClient();
     var request = await httpClient.getUrl(
         Uri.parse("http://www.wanandroid.com/project/list/1/json?cid=1"));
-
     var response = await request.close();
 
-    if (response.statusCode == 200) {
-      var responseBody = await response.transform(utf8.decoder).join();
-
-      var convertDataToJson = jsonDecode(responseBody)["data"]["datas"];
-      setState(() {
-        data = convertDataToJson;
-      });
-
-      convertDataToJson.forEach((item) {
-        print(item["envelopePic"]);
-      });
-    } else {
+    // 响应失败
+    if (response.statusCode != 200) {
       print("error");
+      return;
     }
+
+    // 响应成功
+    var responseBody = await response.transform(utf8.decoder).join();
+    var convertDataToJson = jsonDecode(responseBody)["data"]["datas"];
+    setState(() {
+      data = convertDataToJson;
+    });
+
+    convertDataToJson.forEach((item) {
+      print(item["envelopePic"]);
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
+      appBar: AppBar(title: Text("http"),),
       body: new ListView(children: data != null ? _getItem() : _loading()),
     );
   }
@@ -112,7 +98,7 @@ class HomeState extends State<HomePage> {
                           fontSize: 20.0,
                         ),
                         textAlign: TextAlign.left,
-                    maxLines: 1),
+                        maxLines: 1),
                     Text(
                       "${item["desc"]}",
                       maxLines: 3,
@@ -123,7 +109,7 @@ class HomeState extends State<HomePage> {
             )),
         ClipRect(
           child: FadeInImage.assetNetwork(
-            placeholder: "images/01.png",
+            placeholder: "assets/images/fei_ji.png",
             image: "${item['envelopePic']}",
             width: 50.0,
             height: 50.0,

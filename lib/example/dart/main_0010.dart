@@ -38,6 +38,6 @@ class Point2D {
   // 由于是在 initializer list 中，Dart 知道第一个 x 是 this.x，  
   // 第二个 x 是构造函数的参数 
   Point2D(int x, int y) : x = x, y = y {
-  // ... 
+    // ... 
   }
 }

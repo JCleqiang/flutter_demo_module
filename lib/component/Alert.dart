@@ -30,7 +30,6 @@ class Alert extends StatefulWidget {
 class _AlertPageState2 extends State<Alert> {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return null;
   }
 }

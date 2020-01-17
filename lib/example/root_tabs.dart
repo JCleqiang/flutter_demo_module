@@ -10,17 +10,6 @@ class RootTabs extends StatefulWidget {
 
 class _RootTabsState extends State<RootTabs> with SingleTickerProviderStateMixin {
   TabController controller;
-
-//  static List _tabData = [
-//    {'text': '首页', 'icon': new Icon(Icons.home)},
-//    {'text': '消息', 'icon': new Icon(Icons.message)},
-//    {'text': '我的', 'icon': new Icon(Icons.person)}
-//  ];
-//  List _pages = [
-//    Home(Colors.green, "首页"),
-//    Home(Colors.deepOrangeAccent, "消息"),
-//    Home(Colors.purpleAccent, "我的"),
-//  ];
   List<PageInfo> _pageInfoList = PageInfo.getPageInfoList();
 
   @override
@@ -34,15 +23,6 @@ class _RootTabsState extends State<RootTabs> with SingleTickerProviderStateMixin
       initialIndex: 0,
     );
   }
-
-  // tab上的页面组件数组
-//  List<Widget> _getPageData() {
-//    var tempList = _pageInfoList.map((value) {
-//      return value.page;
-//    });
-//
-//    return tempList.toList();
-//  }
 
   // 标签item组件数组
   List<BottomNavigationBarItem> _getTabData() {
