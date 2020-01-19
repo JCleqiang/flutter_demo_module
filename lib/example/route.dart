@@ -10,6 +10,8 @@ import 'package:flutter_demo_module/example/pages/view_demo/demo_06.dart';
 import 'package:flutter_demo_module/example/pages/view_demo/demo_07.dart';
 import 'package:flutter_demo_module/example/pages/view_demo/demo_08.dart';
 import 'package:flutter_demo_module/example/pages/view_demo/demo_09.dart';
+import 'package:flutter_demo_module/example/pages/view_demo/demo_10.dart';
+import 'package:flutter_demo_module/example/pages/view_demo/demo_11.dart';
 import 'package:flutter_demo_module/example/pages/view_demo/dependnet/dep_search.dart';
 import 'package:flutter_demo_module/example/pages/view_demo/dependnet/dep_search_01.dart';
 import 'package:flutter_demo_module/example/root_tabs.dart';
@@ -26,6 +28,8 @@ final routes = {
   "/demo_07": (context) => Demo_07(),
   "/demo_08": (context) => Demo_08(),
   "/demo_09": (context) => Demo_09(),
+  "/demo_10": (context) => Demo_10(),
+  "/demo_11": (context) => Demo_11(),
 
   "/dep_serach": (context) => Search(),
   "/dep_search_01": (context, {arguments}) => Search_01(orderInfo: arguments),
