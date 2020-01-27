@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo_module/example/pages/net/net.dart';
+import 'package:flutter_demo_module/example/pages/provider_02/provider_02_page.dart';
 import 'package:flutter_demo_module/example/pages/view_demo/banner/pagination.dart';
 import 'package:flutter_demo_module/example/pages/view_demo/demo_00.dart';
 import 'package:flutter_demo_module/example/pages/view_demo/demo_01.dart';
@@ -35,6 +37,10 @@ final routes = {
   "/dep_search_01": (context, {arguments}) => Search_01(orderInfo: arguments),
   "/banner": (context) => Pagination(),
 
+
+
+  "/net": (context) => Net(),
+  "/provider_02_page": (context) => Provider02Page(),
 };
 
 //固定写法

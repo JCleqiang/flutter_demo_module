@@ -12,4 +12,9 @@ List exampleList = [
   {"route": "/demo_09", "title": '网络', "des": '文件名：demo_09.dart，路由：/demo_09'},
   {"route": "/demo_10", "title": 'ScrollView', "des": '文件名：demo_10.dart，路由：/demo_10'},
   {"route": "/demo_11", "title": '动画', "des": '文件名：demo_11.dart，路由：/demo_11'},
+  {"route": "/net", "title": '网络', "des": '文件名：net.dart，路由：/net'},
+
+  {"route": "/provider_02_page", "title": 'provider_02_page', "des": '文件名：provider_02_page.dart，路由：/provider_02_page'},
+
+
 ];
