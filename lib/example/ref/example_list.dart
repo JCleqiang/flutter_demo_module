@@ -13,6 +13,8 @@ List exampleList = [
   {"route": "/demo_10", "title": 'ScrollView', "des": '文件名：demo_10.dart，路由：/demo_10'},
   {"route": "/demo_11", "title": '动画', "des": '文件名：demo_11.dart，路由：/demo_11'},
   {"route": "/net", "title": '网络', "des": '文件名：net.dart，路由：/net'},
+  {"route": "/refresh_01", "title": '刷新01(普通)', "des": '文件名：refresh_01.dart，路由：/refresh_01'},
+  {"route": "/refresh_02", "title": '刷新02(回弹)', "des": '文件名：refresh_02.dart，路由：/refresh_02'},
 
   {"route": "/provider_02_page", "title": 'provider_02_page', "des": '文件名：provider_02_page.dart，路由：/provider_02_page'},
 

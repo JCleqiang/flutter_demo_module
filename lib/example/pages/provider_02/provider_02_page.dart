@@ -15,7 +15,10 @@ class Provider02Page extends StatefulWidget {
 
 class Provider02PageState extends State<Provider02Page> {
   @override
-  Widget build(BuildContext context) { 
+  Widget build(BuildContext context) {
+    // 两种方式Provider()和Provider.value()，使用基本差不多，
+    // 区别在于Provider()提供dispose参数，可以在传递一个方法销毁的时候被调用，
+    // 方便StatelessWidget释放资源
     return Provider<CountBlock>(
         create: (context) {
           return CountBlock();

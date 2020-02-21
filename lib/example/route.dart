@@ -16,6 +16,8 @@ import 'package:flutter_demo_module/example/pages/view_demo/demo_10.dart';
 import 'package:flutter_demo_module/example/pages/view_demo/demo_11.dart';
 import 'package:flutter_demo_module/example/pages/view_demo/dependnet/dep_search.dart';
 import 'package:flutter_demo_module/example/pages/view_demo/dependnet/dep_search_01.dart';
+import 'package:flutter_demo_module/example/pages/view_demo/refresh/refresh_01.dart';
+import 'package:flutter_demo_module/example/pages/view_demo/refresh/refresh_02.dart';
 import 'package:flutter_demo_module/example/root_tabs.dart';
 
 final routes = {
@@ -40,6 +42,8 @@ final routes = {
 
 
   "/net": (context) => Net(),
+  "/refresh_01": (context) => RefreshDemoPage(),
+  "/refresh_02": (context) => RefreshDemo02Page(),
   "/provider_02_page": (context) => Provider02Page(),
 };
 
