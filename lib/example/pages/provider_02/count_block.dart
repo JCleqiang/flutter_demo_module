@@ -2,20 +2,22 @@
 import 'dart:async';
 
 class CountBlock {
-  final StreamController<int> _countController = StreamController();
-  int count = 0;
-  Stream<int> stream;
+  /// 1.1 定义一个Controller
+  final StreamController<int> countController = StreamController();
+  /// 1.2 获取 StreamSink 做 add 入口
+  StreamSink<int> get countSink => countController.sink;
+  /// 1.3 获取 Stream 用于监听
+  Stream<int> get countStream => countController.stream;
 
-  CountBlock(){
-    stream = _countController.stream.asBroadcastStream();
-  }
+
+  int count = 0;
 
   add() {
-    _countController.sink.add(++count);
+    countSink.add(++count);
   }
 
   dispose() {
-    _countController.close();
+    countController.close();
   }
 
 }

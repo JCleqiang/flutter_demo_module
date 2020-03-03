@@ -1,48 +1,47 @@
 class A {
-  void a() {
-    print('fun a => by a');
+  a() {
+    print("A.a()");
+  }
+
+  b() {
+    print("A.b()");
   }
 }
 
-class B implements A {
-  @override
-  void a() {
-    print('fun a => by b');
+class A2 {
+  a() {
+    print("A2.a()");
   }
 }
 
-class C {
-
-  void a() {
-    print('fun a => by c');
+class B {
+  a() {
+    print("B.a()");
   }
 
-  void c() {
-    print('fun c => by c');
+  b() {
+    print("B.b()");
   }
 
-  void s(){
-    print('fun s => by c');
-  }
-}
-
-class E {
-  String e = 'eeee';
-
-  void s(){
-    print('fun s => by e');
+  c() {
+    print("B.c()");
   }
 }
 
-class D extends A with E, C {
-  void c() {
-    print('fun c => by d');
-  }
+class G extends B with A, A2 {
+
 }
 
-void main() {
-  D d = new D();
-  d.a(); // fun a => by a
-  d.s();
-  d.c(); // fun c => by d
+
+/// 就是相同方法被覆盖了，并且 with 后面的会覆盖前面的
+testMixins() {
+  G t = new G();
+  t.a();
+  t.b();
+  t.c();
 }
+
+/// ***********************输出***********************
+///I/flutter (13627): A2.a()
+///I/flutter (13627): A.b()
+///I/flutter (13627): B.c()

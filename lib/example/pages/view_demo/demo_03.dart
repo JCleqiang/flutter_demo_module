@@ -63,23 +63,77 @@ class LayoutDemo2 extends StatelessWidget {
   Widget build(BuildContext context) {
 //    return IconContainer(Icons.home, color: Colors.orange, size: Size(160, 144));
     return Container(
-      width: 300,
-      height: 64,
+//      width: 300,
+      height: 100,
       color: Colors.orange,
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
+          SizedBox(width: 15,),
           IconContainer(
             Icons.home,
             color: Colors.green,
             size: Size(32, 32),
           ),
+          SizedBox(width: 15,),
           IconContainer(
             Icons.search,
             color: Colors.yellow,
             size: Size(32, 32),
           ),
+          Expanded(
+            flex: 1,
+              child: Container(
+//                padding: EdgeInsets.fromLTRB(0, 0, 15, 0),
+              margin: EdgeInsets.fromLTRB(100, 0, 15, 0),
+                color: Colors.red,
+                child: Text("你大爷2", textAlign: TextAlign.end),
+              )
+          )
+        ],
+      ),
+    );
+  }
+}
+
+class LayoutDemo2_1 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+//    return IconContainer(Icons.home, color: Colors.orange, size: Size(160, 144));
+    return Container(
+      padding: EdgeInsets.fromLTRB(0, 16, 0, 16),
+      width: MediaQuery.of(context).size.width,
+      height: 64,
+      color: Colors.orange,
+      child: Stack(
+        children: <Widget>[
+          Positioned(
+            left: 15,
+              child: IconContainer(
+                Icons.home,
+                color: Colors.green,
+                size: Size(32, 32),
+              ),
+          ),
+
+          Positioned(
+            left: 57,
+              child: IconContainer(
+                Icons.search,
+                color: Colors.yellow,
+                size: Size(32, 32),
+              ),
+          ),
+          Positioned(
+            right: 15,
+              child: Container(
+                height: 32,
+                padding: EdgeInsets.fromLTRB(0, 5, 0, 0),
+                child: Text("你大爷2"),
+              )
+          )
         ],
       ),
     );

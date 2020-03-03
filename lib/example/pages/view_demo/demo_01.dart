@@ -15,14 +15,17 @@ class Demo_01 extends StatelessWidget{
 /*
  * Text控件
  */
-class TextContent extends StatelessWidget{
+class TextContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
       child: Container(
         child: Text(
-            '各位同学大家好',
-            textAlign:TextAlign.center,
+            'abcdefghijklmnopqrstuvwxyz',
+            /**
+             * 文字对齐方式(不是文字控件在容器的布局),好像对单行不起作用
+             */
+            textAlign:TextAlign.right,
             overflow:TextOverflow.ellipsis ,
             maxLines: 10,
             textScaleFactor: 1.8,

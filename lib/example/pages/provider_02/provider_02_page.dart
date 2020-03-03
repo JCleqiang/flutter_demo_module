@@ -43,7 +43,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text("HomePage")),
       body: StreamBuilder(
-          stream: Provider.of<CountBlock>(context).stream,
+          stream: Provider.of<CountBlock>(context).countStream,
           initialData: 0,
           builder: (context, snapshot) {
             return Center(child: Text("${snapshot.data}"));
@@ -71,7 +71,7 @@ class _SecondPageState extends State<SecondPage> {
     return Scaffold(
       appBar: AppBar(title: Text("第二页")),
       body: StreamBuilder(
-          stream: bloc.stream,
+          stream: bloc.countStream,
           initialData: bloc.count,
           builder: (context, snapshot) {
             return Center(child: Text("${snapshot.data}"));

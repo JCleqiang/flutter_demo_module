@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo_module/example/pages/view_demo/demo_01.dart';
 
 
 class Demo_05 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-      return AppBardemoPage3();
+      return AppBardemoPage2();
   }
 }
 
@@ -60,9 +61,10 @@ class AppBardemoPage2 extends StatelessWidget {
               ListView(
                 children: _listWidget(0)
               ),
-              ListView(
-                children: _listWidget(1)
-              ),
+//              ListView(
+//                children: _listWidget(1)
+//              ),
+            Demo_01(),
               ListView(
                 children: _listWidget(2)
               )
