@@ -8,7 +8,8 @@ class RootTabs extends StatefulWidget {
   }
 }
 
-class _RootTabsState extends State<RootTabs> with SingleTickerProviderStateMixin {
+class _RootTabsState extends State<RootTabs>
+    with SingleTickerProviderStateMixin {
   TabController controller;
   List<PageInfo> _pageInfoList = PageInfo.getPageInfoList();
 
@@ -38,8 +39,9 @@ class _RootTabsState extends State<RootTabs> with SingleTickerProviderStateMixin
   Widget build(BuildContext context) {
     return Scaffold(
       body: TabBarView(
+        physics: NeverScrollableScrollPhysics(),
         controller: controller,
-        children: _pageInfoList.map((value){
+        children: _pageInfoList.map((value) {
           return value.page;
         }).toList(),
       ),

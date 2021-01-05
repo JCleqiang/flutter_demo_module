@@ -29,6 +29,7 @@ class HomePage extends State<Home> {
         ),
         body: ListView(
           children: exampleList.map((value) {
+            // InkWell组件在用户点击时出现“水波纹”效果，InkWell简单用法：
             return InkWell(
               onTap: () {
                 Navigator.of(context).pushNamed(value["route"]);
@@ -40,6 +41,7 @@ class HomePage extends State<Home> {
   }
 }
 
+// 自定义卡片
 class CardLayout extends StatelessWidget {
   Map obj = null;
 
@@ -49,7 +51,7 @@ class CardLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Card(
+    return Card(
       margin: EdgeInsets.fromLTRB(15, 5, 15, 5),
       child: ListTile(
         title: Text(
@@ -70,4 +72,3 @@ class CardLayout extends StatelessWidget {
     );
   }
 }
-

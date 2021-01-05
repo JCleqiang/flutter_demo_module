@@ -34,13 +34,9 @@ final routes = {
   "/demo_09": (context) => Demo_09(),
   "/demo_10": (context) => Demo_10(),
   "/demo_11": (context) => Demo_11(),
-
   "/dep_serach": (context) => Search(),
   "/dep_search_01": (context, {arguments}) => Search_01(orderInfo: arguments),
   "/banner": (context) => Pagination(),
-
-
-
   "/net": (context) => Net(),
   "/refresh_01": (context) => RefreshDemoPage(),
   "/refresh_02": (context) => RefreshDemo02Page(),
@@ -59,15 +55,13 @@ var onGenerateRoute = (RouteSettings settings) {
     // 1.3 获取入参
     if (settings.arguments != null) {
       final Route route = MaterialPageRoute(
-          builder: (context) => pageContentBuilder(context, arguments: settings.arguments));
+          builder: (context) =>
+              pageContentBuilder(context, arguments: settings.arguments));
       return route;
-
     } else {
       final Route route =
-      MaterialPageRoute(builder: (context) => pageContentBuilder(context));
+          MaterialPageRoute(builder: (context) => pageContentBuilder(context));
       return route;
     }
   }
 };
-
-

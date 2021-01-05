@@ -4,7 +4,13 @@ import 'package:flutter_demo_module/example/ref/data_list.dart';
 class Demo_02 extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return HomeContent3();
+    return chooseState();
+  }
+
+  State<StatefulWidget> chooseState() {
+    // return HomeContent(); // 列表死数据加载示例
+    // return HomeContent2(); // 加载动态数据示例
+    return HomeContent3(); // ListView_动态改变Cell 示例
   }
 }
 
@@ -17,7 +23,6 @@ class HomeContent extends State<Demo_02> {
       body: Container(
         padding: EdgeInsets.all(20),
         color: Colors.white,
-        height: 10000,
         child: ListView(
           children: listWidget,
         ),
@@ -67,12 +72,13 @@ class HomeContent extends State<Demo_02> {
           padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
           child: Column(
             children: <Widget>[
-              Text("Padding控件的使用", ),
+              Text(
+                "Padding控件的使用",
+              ),
               Image.network('https://www.itying.com/images/flutter/1.png',
                   fit: BoxFit.cover)
             ],
-          )
-      ),
+          )),
     )
   ];
 }
@@ -114,19 +120,18 @@ class HomeContent3 extends State<Demo_02> {
   }
 
   Widget _getListData(BuildContext context, int index) {
+    var color =
+        dataList[index]["description"] == "1" ? Colors.red : Colors.grey;
     return ListTile(
       title: Text(dataList[index]["title"]),
       trailing: IconButton(
-          icon: Icon(Icons.favorite, color: dataList[index]["description"] == "1"? Colors.red :Colors.grey),
+          icon: Icon(Icons.favorite, color: color),
           onPressed: () {
             bool isSelected = dataList[index]["description"] == "1";
-            dataList[index]["description"] = isSelected? "0": "1";
+            dataList[index]["description"] = isSelected ? "0" : "1";
 
-            setState(() {
-
-            });
+            setState(() {});
           }),
     );
   }
-
 }
