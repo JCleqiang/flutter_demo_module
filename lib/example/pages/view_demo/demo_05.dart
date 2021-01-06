@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo_module/example/pages/view_demo/demo_01.dart';
 
-
 class Demo_05 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-      return AppBardemoPage2();
+    return showDemo();
+  }
+
+  Widget showDemo() {
+    // return AppBardemoPage();
+    // return AppBardemoPage2(); // AppBar结合TabBarView，滚动页面
+    return AppBardemoPage3(); // DefaultTabController使用
   }
 }
 
@@ -33,7 +38,7 @@ class AppBardemoPage extends StatelessWidget {
               icon: Icon(Icons.more_horiz),
               onPressed: () {
                 print('more_horiz Pressed');
-              })
+              }),
         ],
       ),
       body: Text('这是 Appbar'),
@@ -58,16 +63,9 @@ class AppBardemoPage2 extends StatelessWidget {
               ])),
           body: TabBarView(
             children: <Widget>[
-              ListView(
-                children: _listWidget(0)
-              ),
-//              ListView(
-//                children: _listWidget(1)
-//              ),
-            Demo_01(),
-              ListView(
-                children: _listWidget(2)
-              )
+              ListView(children: _listWidget(0)),
+              Demo_01(),
+              ListView(children: _listWidget(2))
             ],
           ),
         ),
@@ -77,8 +75,9 @@ class AppBardemoPage2 extends StatelessWidget {
 
   List<Widget> _listWidget(int tabIndex) {
     List<Widget> tmp = List();
-    for(int i = 0; i < 100; i++) {
-      Widget w = ListTile(title: Text("这是第" + tabIndex.toString() + "组第" + i.toString() + "行"));
+    for (int i = 0; i < 100; i++) {
+      Widget w = ListTile(
+          title: Text("这是第" + tabIndex.toString() + "组第" + i.toString() + "行"));
 
       tmp.add(w);
     }
@@ -108,7 +107,7 @@ class AppBardemoPage3 extends StatelessWidget {
                 Expanded(
                   flex: 1,
                   child:
-                  TabBar(tabs: <Widget>[Tab(text: "热门"), Tab(text: "推荐")]),
+                      TabBar(tabs: <Widget>[Tab(text: "热门"), Tab(text: "推荐")]),
                 )
               ],
             ),
@@ -136,4 +135,3 @@ class AppBardemoPage3 extends StatelessWidget {
     );
   }
 }
-

@@ -13,8 +13,8 @@ class Demo_03 extends StatelessWidget {
   Widget chooseBody() {
     // return GridViewDemo(); // GridView基本使用
     // return LayoutDemo2(); // Row和Expanded基本使用
-    return LayoutDemo2_1(); // Column基本使用
-    // return LayoutDemo2_2(); // Stack和Positioned的使用
+    // return LayoutDemo2_1(); // Column基本使用
+    return LayoutDemo2_2(); // Stack和Positioned的使用
   }
 }
 
@@ -76,7 +76,7 @@ class GridViewDemo extends StatelessWidget {
 
 /**
  * 
- * Expanded有个属性flex，知道flex布局的都知道这个属性
+ * Expanded有个属性flex，和flex布局的差不多意思
  */
 class LayoutDemo2 extends StatelessWidget {
   @override
@@ -123,10 +123,16 @@ class LayoutDemo2 extends StatelessWidget {
 class LayoutDemo2_1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var screenW = MediaQuery.of(context).size.width;
+
+    var vPicH = (screenW - 30) * 0.5 * 1.5;
+    var hPicH = (vPicH - 10) * 0.5;
+
     return Column(
       children: <Widget>[
         Container(
           height: 150,
+          width: screenW,
           color: Colors.orange,
         ),
         SizedBox(
@@ -137,9 +143,8 @@ class LayoutDemo2_1 extends StatelessWidget {
             Expanded(
               flex: 2,
               child: Container(
-                color: Colors.red,
-                padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
-                height: 180,
+                padding: EdgeInsets.fromLTRB(10, 0, 5, 0),
+                height: vPicH,
                 child: Image.network(
                   "https://www.itying.com/images/flutter/3.png",
                   fit: BoxFit.cover,
@@ -151,8 +156,9 @@ class LayoutDemo2_1 extends StatelessWidget {
               child: Column(
                 children: <Widget>[
                   Container(
-                    color: Colors.green,
-                    height: 85,
+                    height: hPicH,
+                    width: screenW * 0.5,
+                    padding: EdgeInsets.fromLTRB(5, 0, 10, 0),
                     child: Image.network(
                         "https://www.itying.com/images/flutter/4.png",
                         fit: BoxFit.cover),
@@ -161,7 +167,9 @@ class LayoutDemo2_1 extends StatelessWidget {
                     height: 10,
                   ),
                   Container(
-                    height: 85,
+                    height: hPicH,
+                    width: screenW * 0.5,
+                    padding: EdgeInsets.fromLTRB(5, 0, 10, 0),
                     child: Image.network(
                         "https://www.itying.com/images/flutter/5.png",
                         fit: BoxFit.cover),

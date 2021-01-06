@@ -23,6 +23,7 @@ class HomeState extends State<Demo_09> {
     var httpClient = new HttpClient();
     var request = await httpClient.getUrl(
         Uri.parse("http://www.wanandroid.com/project/list/1/json?cid=1"));
+    // 得到_HttpClientResponse响应对象
     var response = await request.close();
 
     // 响应失败
@@ -46,7 +47,9 @@ class HomeState extends State<Demo_09> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      appBar: AppBar(title: Text("http"),),
+      appBar: AppBar(
+        title: Text("http"),
+      ),
       body: new ListView(children: data != null ? _getItem() : _loading()),
     );
   }
@@ -87,7 +90,7 @@ class HomeState extends State<Demo_09> {
       children: <Widget>[
         Flexible(
             flex: 1,
-            fit: FlexFit.tight, //和android的weight=1效果一样
+            fit: FlexFit.tight, // 和android的weight=1效果一样
             child: Stack(
               children: <Widget>[
                 Column(
@@ -102,18 +105,22 @@ class HomeState extends State<Demo_09> {
                     Text(
                       "${item["desc"]}",
                       maxLines: 3,
+                      overflow: TextOverflow.ellipsis, // 超出就点点点
                     )
                   ],
-                )
+                ),
               ],
             )),
-        ClipRect(
-          child: FadeInImage.assetNetwork(
-            placeholder: "assets/images/fei_ji.png",
-            image: "${item['envelopePic']}",
-            width: 50.0,
-            height: 50.0,
-            fit: BoxFit.fitWidth,
+        Container(
+          margin: EdgeInsets.fromLTRB(45, 0, 0, 0),
+          child: ClipRect(
+            child: FadeInImage.assetNetwork(
+              placeholder: "assets/images/fei_ji.png",
+              image: "${item['envelopePic']}",
+              width: 68.0,
+              height: 68.0,
+              fit: BoxFit.cover,
+            ),
           ),
         ),
       ],

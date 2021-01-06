@@ -16,19 +16,22 @@ class CustomScrollViewPage extends State<Demo_10> {
         slivers: <Widget>[
           //AppBar，包含一个导航栏
           SliverAppBar(
+            // 上滑appbar是否定在屏幕顶部
             pinned: true,
             expandedHeight: 110.0,
             flexibleSpace: FlexibleSpaceBar(
               title: const Text('CustomScrollView'),
-              background: Image.asset (
-                'assets/images/fei_ji.png', fit: BoxFit.cover,
+              background: Image.asset(
+                'assets/images/fei_ji.png',
+                fit: BoxFit.cover,
               ),
             ),
           ),
           SliverPadding(
             padding: const EdgeInsets.all(8.0),
             sliver: new SliverGrid(
-              delegate: new SliverChildBuilderDelegate( (BuildContext context, int index) {
+              delegate: new SliverChildBuilderDelegate(
+                (BuildContext context, int index) {
                   return new Container(
                     alignment: Alignment.center,
                     color: Colors.cyan[100 * (index % 9)],
@@ -49,16 +52,15 @@ class CustomScrollViewPage extends State<Demo_10> {
           SliverFixedExtentList(
             itemExtent: 50.0,
             delegate: new SliverChildBuilderDelegate(
-                    (BuildContext context, int index) {
-                  //创建列表项
-                  return new Container(
-                    alignment: Alignment.center,
-                    color: Colors.lightBlue[100 * (index % 9)],
-                    child: new Text('list item $index'),
-                  );
-                },
-                childCount: 50 //50个列表项
-            ),
+                (BuildContext context, int index) {
+              //创建列表项
+              return new Container(
+                alignment: Alignment.center,
+                color: Colors.lightBlue[100 * (index % 9)],
+                child: new Text('list item $index'),
+              );
+            }, childCount: 50 //50个列表项
+                ),
           ),
         ],
       ),

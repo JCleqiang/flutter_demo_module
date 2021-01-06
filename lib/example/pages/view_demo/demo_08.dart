@@ -4,7 +4,13 @@ class Demo_08 extends StatefulWidget {
   Demo_08({Key key}) : super(key: key);
 
   State<StatefulWidget> createState() {
-    return TextDemo();
+    return showState();
+  }
+
+  State<StatefulWidget> showState() {
+    // return _TextFieldDemoPageState(); // TextField的基本使用
+    // return _TextDemo(); // TextField属性详解
+    return _FormDemoPageState(); // 其它表单类型
   }
 }
 
@@ -31,6 +37,10 @@ class _TextFieldDemoPageState extends State<Demo_08> {
           // child:TextDemo() ,
           child: Column(
             children: <Widget>[
+              Container(
+                  child: Text("账号登录",
+                      style: TextStyle(
+                          fontSize: 20, fontWeight: FontWeight.bold))),
               TextField(
                 decoration: InputDecoration(hintText: "请输入用户名"),
                 controller: _username,
@@ -71,11 +81,13 @@ class _TextFieldDemoPageState extends State<Demo_08> {
   }
 }
 
-class TextDemo extends State<Demo_08> {
+class _TextDemo extends State<Demo_08> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("TextField属性"),),
+      appBar: AppBar(
+        title: Text("TextField属性"),
+      ),
       body: Container(
         child: Column(
           children: <Widget>[
@@ -88,13 +100,13 @@ class TextDemo extends State<Demo_08> {
             TextField(
               maxLines: 4,
               decoration: InputDecoration(
-                hintText: "多行文本框", border: OutlineInputBorder()),
+                  hintText: "多行文本框", border: OutlineInputBorder()),
             ),
             SizedBox(height: 20),
             TextField(
               obscureText: true,
-              decoration:
-              InputDecoration(hintText: "密码框", border: OutlineInputBorder()),
+              decoration: InputDecoration(
+                  hintText: "密码框", border: OutlineInputBorder()),
             ),
             SizedBox(height: 20),
             TextField(

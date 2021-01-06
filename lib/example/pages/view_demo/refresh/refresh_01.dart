@@ -21,8 +21,9 @@ class _RefreshDemoPageState extends State<RefreshDemoPage> {
 
     // 列表监听, 列表到最底部加载更多数据
     _scrollController.addListener(() {
-      if (_scrollController.position.pixels ==
-          _scrollController.position.maxScrollExtent) {
+      var isScrollBottom = _scrollController.position.pixels ==
+          _scrollController.position.maxScrollExtent;
+      if (isScrollBottom) {
         loadMore();
       }
     });

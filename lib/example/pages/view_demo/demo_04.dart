@@ -3,9 +3,14 @@ import 'package:flutter/material.dart';
 class Demo_04 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(title: Text("布局定位示例")),
-        body: LayoutDemo44());
+    return Scaffold(appBar: AppBar(title: Text("布局定位示例")), body: chooseBody());
+  }
+
+  Widget chooseBody() {
+    // return LayoutDemo(); // Stack基本使用
+    // return LayoutDemo2(); // Stack搭配Align
+    // return LayoutDemo3(); // Stack搭配Positioned
+    return LayoutDemo44(); // Wrap基本使用
   }
 }
 
@@ -16,17 +21,15 @@ class LayoutDemo extends StatelessWidget {
       child: Stack(
         // 需要注意的一点：alignment的左边是以children里面的控件最大的一个为坐标，谁的长以谁的y为坐标，谁的款以谁的x为坐标
         alignment: Alignment.bottomRight,
-//        alignment: Alignment(1, 0.3), // (0,0)表示居中，（1,1）表示在右下角，以此类推
+//        alignment: Alignment(1, 0.3), // (0, 0)表示居中，（1,1）表示在右下角，以此类推
         children: <Widget>[
           Container(
             height: 200,
             width: 200,
             color: Colors.red,
           ),
-          Text('我是我是一个文本',style: TextStyle(
-              fontSize: 30,
-              color: Colors.purple
-          )),
+          Text('我是我是一个文本',
+              style: TextStyle(fontSize: 30, color: Colors.purple)),
           Container(
             height: 100,
             width: 100,
@@ -38,28 +41,29 @@ class LayoutDemo extends StatelessWidget {
   }
 }
 
-
 class LayoutDemo2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child:  Container(
+      child: Container(
         height: 400,
         width: 300,
         color: Colors.red,
         child: Stack(
           children: <Widget>[
             Align(
-              alignment: Alignment(1,-0.2),
-              child: Icon(Icons.home,size: 40,color: Colors.white),
+              // 中点坐标是（0，0）
+              alignment: Alignment(-1, -1),
+              child: Icon(Icons.home, size: 40, color: Colors.white),
             ),
             Align(
               alignment: Alignment.center,
-              child: Icon(Icons.search,size: 30,color: Colors.white),
+              child: Icon(Icons.search, size: 30, color: Colors.white),
             ),
             Align(
               alignment: Alignment.bottomRight,
-              child: Icon(Icons.settings_applications,size: 30,color: Colors.white),
+              child: Icon(Icons.settings_applications,
+                  size: 30, color: Colors.white),
             )
           ],
         ),
@@ -68,30 +72,29 @@ class LayoutDemo2 extends StatelessWidget {
   }
 }
 
-
 class LayoutDemo3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child:  Container(
+      child: Container(
         height: 400,
         width: 300,
         color: Colors.red,
         child: Stack(
-          // alignment: Alignment.center,
           children: <Widget>[
             Positioned(
               left: 10,
-              child: Icon(Icons.home,size: 40,color: Colors.white),
+              child: Icon(Icons.home, size: 40, color: Colors.white),
             ),
             Positioned(
               bottom: 0,
               left: 100,
-              child: Icon(Icons.search,size: 30,color: Colors.white),
+              child: Icon(Icons.search, size: 30, color: Colors.white),
             ),
             Positioned(
               right: 0,
-              child: Icon(Icons.settings_applications,size: 30,color: Colors.white),
+              child: Icon(Icons.settings_applications,
+                  size: 30, color: Colors.white),
             )
           ],
         ),
@@ -108,7 +111,7 @@ class LayoutDemo44 extends StatelessWidget {
       color: Colors.pink,
       padding: EdgeInsets.all(10),
       child: Wrap(
-        spacing:10, // 行内控件之间距离
+        spacing: 10, // 行内控件之间距离
         runSpacing: 10, // 行与行之间距离
         direction: Axis.horizontal,
         // alignment:WrapAlignment.spaceEvenly,
@@ -125,17 +128,14 @@ class LayoutDemo44 extends StatelessWidget {
   }
 }
 
-class MyButton extends StatelessWidget{
+class MyButton extends StatelessWidget {
   final String text;
-  const MyButton(this.text,{Key key}) : super(key: key);
+  const MyButton(this.text, {Key key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return RaisedButton(
         child: Text(this.text),
-        textColor:Theme.of(context).accentColor,
-        onPressed: (){
-        }
-    );
+        textColor: Theme.of(context).accentColor,
+        onPressed: () {});
   }
 }

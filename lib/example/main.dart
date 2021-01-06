@@ -4,7 +4,11 @@ import 'package:flutter_demo_module/example/route.dart';
 
 // 2.应用入口
 // main函数使用了(=>)符号，这是Dart中单行函数或方法的简写
-void main() => runApp(MyApp());
+// void main() => runApp(MyApp());
+void main() {
+  // 该runApp函数接受给定的Widget并使其成为widget树的根
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override

@@ -10,17 +10,22 @@ class Demo_06 extends StatefulWidget {
 
 class _HomePageState2 extends State<Demo_06> {
   List list = new List();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("路由示例"),),
+      appBar: AppBar(
+        title: Text("路由示例"),
+      ),
       body: ListView(
         children: <Widget>[
           Column(
-              children: this.list.map((value) {return ListTile(title: Text(value),);}).toList()),
+              children: this.list.map((value) {
+            return ListTile(title: Text(value));
+          }).toList()),
           SizedBox(height: 20),
           RaisedButton(
-            child: Text("按钮"),
+            child: Text("按钮，新增数据"),
             onPressed: () {
               setState(() {
                 list.add('新增数据' + list.length.toString());
@@ -30,7 +35,10 @@ class _HomePageState2 extends State<Demo_06> {
           RaisedButton(
             onPressed: () {
               Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) => Search(orderId: "",)),
+                MaterialPageRoute(
+                    builder: (context) => Search(
+                          orderId: "",
+                        )),
               );
             },
             child: Text("不带参跳转->search页面"),
@@ -39,7 +47,10 @@ class _HomePageState2 extends State<Demo_06> {
             onPressed: () {
               // 带参数路由跳转
               Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) => Search(orderId: "D3247238472394792374923",)),
+                MaterialPageRoute(
+                    builder: (context) => Search(
+                          orderId: "D3247238472394792374923",
+                        )),
               );
             },
             child: Text("带参跳转->search页面"),

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class Search extends StatelessWidget {
-
   String orderId = "1";
   Search({this.orderId});
 
@@ -22,7 +21,6 @@ class Search extends StatelessWidget {
                 color: Color.fromARGB(255, 22, 222, 222),
               ),
             ),
-
           ),
           RaisedButton(
             onPressed: () {
