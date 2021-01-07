@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 
 // ignore: camel_case_types
 class Demo_00 extends StatefulWidget {
+  /**
+   * 在StatefulWidget调用createState之后，框架将新的状态对象插入树中，然后调用状态对象的initState。
+   * 子类化State可以重写initState，以完成仅需要执行一次的工作。 
+   * initState的实现中需要调用super.initState。
+   */
   @override
   State<StatefulWidget> createState() {
     return MyHome();
@@ -12,6 +17,7 @@ class MyHome extends State<Demo_00> {
   @override
   //初始化状态
   void initState() {
+    super.initState();
     print("initState -- 初始化");
   }
 
@@ -62,7 +68,9 @@ class MyHome extends State<Demo_00> {
     print("deactive -- 停用");
   }
 
-  // 当State对象从树中被永久移除时调用；通常在此回调中释放资源。
+  /**
+   * 当一个状态对象不再需要时，框架调用状态对象的dispose。 您可以覆盖该dispose方法来执行清理工作
+   */
   @override
   void dispose() {
     super.dispose();

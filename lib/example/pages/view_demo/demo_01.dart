@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+/**
+ Text：该 widget 可让创建一个带格式的文本。
+ */
+
 class Demo_01 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
