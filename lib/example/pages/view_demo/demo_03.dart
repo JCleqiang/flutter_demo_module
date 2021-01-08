@@ -3,6 +3,9 @@ import 'dart:ffi';
 import 'package:flutter/material.dart';
 import 'package:flutter_demo_module/example/ref/data_list.dart';
 
+/**
+ Row、 Column： 这些具有弹性空间的布局类Widget可让您在水平（Row）和垂直（Column）方向上创建灵活的布局。其设计是基于web开发中的Flexbox布局模型。
+ */
 class Demo_03 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
